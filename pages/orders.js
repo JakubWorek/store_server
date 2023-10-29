@@ -26,6 +26,9 @@ export default function OrdersPage(){
           {orders.length > 0 && orders.map(order => (
             <tr>
               <td>{order.createdAt.replace('T', ' ').substring(0,19)}</td>
+              <td className={order.paid ? 'text-green-500' : 'text-red-500'}>
+                {order.paid ? 'YES' : 'NO'}
+              </td>
               <td>
                 {order.name} {order.email} <br />
                 {order.city} {order.postalCode} {order.country} <br />
